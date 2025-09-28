@@ -20,7 +20,7 @@ export default function Home() {
           Manage customers, bookings, and payments in one simple platform.
         </p>
         <button className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700">
-          Get Started - 14 Days Free
+          Get Started - 14 Days Free -new 
         </button>
 
         <div className="grid md:grid-cols-4 gap-8 mt-20">
