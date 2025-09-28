@@ -1,5 +1,5 @@
 import { Users, Calendar, CreditCard, BarChart3 } from 'lucide-react'
-
+import Link from 'next/link'
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -19,9 +19,9 @@ export default function Home() {
         <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
           Manage customers, bookings, and payments in one simple platform.
         </p>
-        <button className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700">
-          Get Started - 14 Days Free -new 
-        </button>
+        <Link href="/dashboard" className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 inline-block">
+  Get Started - 14 Days Free
+</Link>
 
         <div className="grid md:grid-cols-4 gap-8 mt-20">
           <div className="p-6">
