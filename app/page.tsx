@@ -42,7 +42,7 @@ export default function Home() {
           <div className="p-6">
             <BarChart3 className="w-12 h-12 text-blue-600 mx-auto mb-4" />
             <h3 className="font-semibold text-lg mb-2">Real Analytics</h3>
-            <p className="text-gray-600">See what's working instantly</p>
+            <p className="text-gray-600">See what&apos;s working instantly</p>
           </div>
         </div>
       </main>
