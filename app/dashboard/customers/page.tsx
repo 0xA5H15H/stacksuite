@@ -2,16 +2,25 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
 
+// Prefer using generated Supabase types if available (see below). Otherwise define a minimal type:
+type Customer = {
+  id: string | number
+  name: string
+  email: string
+  phone?: string | null
+  business_id?: string
+}
+
 export default function Customers() {
-  const [customers, setCustomers] = useState<any[]>([])
-  
+  const [customers, setCustomers] = useState<Customer[]>([])
+
   useEffect(() => {
     fetchCustomers()
   }, [])
 
   async function fetchCustomers() {
     const { data } = await supabase.from('customers').select('*')
-    if (data) setCustomers(data)
+    if (data) setCustomers(data as Customer[])
   }
 
   async function addCustomer() {
@@ -31,7 +40,7 @@ export default function Customers() {
           Add Customer
         </button>
       </div>
-      
+
       <div className="bg-white rounded-lg shadow">
         <table className="w-full">
           <thead className="border-b">
@@ -42,7 +51,7 @@ export default function Customers() {
             </tr>
           </thead>
           <tbody>
-            {customers.map(customer => (
+            {customers.map((customer) => (
               <tr key={customer.id} className="border-b">
                 <td className="p-4">{customer.name}</td>
                 <td className="p-4">{customer.email}</td>
